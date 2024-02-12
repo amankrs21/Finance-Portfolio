@@ -25,4 +25,40 @@ This project is a web application developed using React for the frontend and Dja
 
    ```bash
    git clone https://github.com/amankrs21/FinanceReactDjango.git
-   
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd FinanceReactDjango
+   ```
+
+3. Install the required dependencies:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+   ```bash
+   npm install
+   ```
+
+4. Run the development server:
+
+   ```bash
+   python manage.py runserver
+   ```
+   ```bash
+   npm start
+   ```
+5. Open the application in your web browser:
+
+   ```bash
+   http://localhost:5173/
+   ```
+   ```bash
+   http://localhost:8000/
+   ```
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE]
