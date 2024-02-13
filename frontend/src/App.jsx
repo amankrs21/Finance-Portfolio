@@ -6,6 +6,8 @@ import About from './pages/about/About'
 import Contact from './pages/contact/Contact'
 import Dashboard from './pages/dashboard/Dashboard'
 import PageNotFound from './pages/PageNotFound'
+import Payment from './pages/payment/Payment';
+import PrivateRoutes from './components/PrivateRoutes';
 
 export default function App() {
 
@@ -16,8 +18,10 @@ export default function App() {
         <Route path='/' element={<Dashboard />} />
         <Route path='/about' element={<About />} />
         <Route path='/contact' element={<Contact />} />
-        {/* <Route path='/menu' element={<Menu />} /> */}
         <Route path='*' element={<PageNotFound />} />
+        <Route path='/' element={<PrivateRoutes />}>
+          <Route path='/payment' element={<Payment />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )

@@ -11,9 +11,9 @@ import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 import Login from '../login/Login';
 import Auth from '../../components/Auth';
-import { toast } from 'react-toastify';
 
 
 export default function Header() {
@@ -72,7 +72,7 @@ export default function Header() {
     };
 
     return (
-        <AppBar position="static" sx={{ backgroundColor: '#191E29' }}>
+        <AppBar position="fixed" sx={{ background: 'rgba(25, 30, 41, 0.4)', backgroundColor: '#191E29', top: 0, zIndex: 1 }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1, color: '#01C38D' }} />

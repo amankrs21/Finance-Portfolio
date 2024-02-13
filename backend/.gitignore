@@ -1,0 +1,7 @@
+venv
+backend/__pycache__
+payment/__pycache__
+payment/migrations
+users/__pycache__
+users/migrations
+db.sqlite3
