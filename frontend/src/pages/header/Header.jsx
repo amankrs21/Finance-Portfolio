@@ -54,6 +54,8 @@ export default function Header() {
             navigate("/about");
         } else if (page === 'Contact') {
             navigate("/contact");
+        } else if (page === 'Payment') {
+            navigate("/payment")
         } else if (page === 'Logout') {
             try {
                 await http

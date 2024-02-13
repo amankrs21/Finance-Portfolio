@@ -12,7 +12,6 @@ export default function PrivateRoutes() {
     if (!isValidToken(token)) {
         return <Navigate to="/" />;
     }
-
     // If the token is valid, render the child routes
     return <Outlet />;
 };

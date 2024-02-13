@@ -39,14 +39,15 @@ export default function Auth() {
         const savedToken = localStorage.getItem("token");
         if (savedToken && isValidToken(savedToken)) {
             setToken(savedToken);
+            http.defaults.headers.common.Authorization = `Bearer ${savedToken}`;
         }
-    }, [navigate]);
+    }, []);
 
     const saveToken = (token) => {
         if (isValidToken(token)) {
-            // Save the token to local storage and set it in state
             localStorage.setItem("token", token);
             setToken(token);
+            http.defaults.headers.common.Authorization = `Bearer ${token}`;
             navigate("/");
         }
     };
@@ -68,28 +69,9 @@ export default function Auth() {
         }
     };
 
-    // Set the Authorization header for all HTTP requests
-    http.defaults.headers.common.Authorization = `Bearer ${token}`;
-
-    const logout = async () => {
-        await http
-            .post("/auth/logout")
-            .then(() => {
-                // Clear CSRF token cookie and remove the token from local storage
-                document.cookie =
-                    "csrftoken=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
-                localStorage.removeItem("token");
-                navigate("/auth/login");
-            })
-            .catch((error) => {
-                console.error(error);
-            });
-    };
-
     return {
         setToken: saveToken,
         isValidToken,
-        logout,
         token,
         http,
     };

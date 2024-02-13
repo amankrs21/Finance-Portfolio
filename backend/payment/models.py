@@ -11,4 +11,4 @@ class Payment(models.Model):
     description = models.TextField()
     
     def __str__(self):
-        return self.user.email
+        return self.pay_id
