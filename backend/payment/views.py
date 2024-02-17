@@ -5,6 +5,7 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from users.middleware import verify_token
 from .serializer import PaymentSerializer
+import razorpay
 
 
 @method_decorator(login_required, name='dispatch')
@@ -25,3 +26,23 @@ class PaymentHistory(APIView):
         except Exception as e:
             return Response({'message': str(e)}, status=500)
         
+        
+class PaymentView(APIView):
+    def post(self, request):
+        try:
+            data = request.data
+            order_amount = 1000
+            order_currency = 'INR'
+            client = razorpay.Client(auth=('rzp_test_1O3z3X3z3X3z3X', 'ayrursgibh'))
+            payment = client.order.create({
+                'amount': order_amount,
+                'currency': order_currency,
+                'payment_capture': '1'
+            })
+            serializer = PaymentSerializer(data=data)
+            if serializer.is_valid():
+                serializer.save()
+                return Response({'message': 'Payment successful'}, status=201)
+            return Response({'message': serializer.errors}, status=400)
+        except Exception as e:
+            return Response({'message': str(e)}, status=500)
