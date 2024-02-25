@@ -38,6 +38,20 @@ class Login(APIView):
 
 @method_decorator(login_required, name='dispatch')
 @method_decorator(verify_token, name='dispatch')
+class VerifyAdmin(APIView):
+    def get(self, request):
+        try:
+            user_id = request.session.get('_auth_user_id')
+            if (User.objects.get(id=user_id).is_superuser):
+                return Response({'message': 'User is admin'}, status=200)
+            else:
+                return Response({'message': 'User is not admin'}, status=400)
+        except Exception as e:
+            return Response({'message': str(e)}, status=500)
+
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(verify_token, name='dispatch')
 class Logout(APIView):
     def post(self, request):
         try:

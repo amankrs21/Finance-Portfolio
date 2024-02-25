@@ -1,3 +1,4 @@
+from users.models import User
 from payment.models import Payment
 from rest_framework.views import APIView
 from rest_framework.response import Response
@@ -19,14 +20,38 @@ class PaymentHistory(APIView):
             payments = Payment.objects.filter(user_id=user_id)
             serializer = PaymentSerializer(payments, many=True)
             payment_list = [dict(payment) for payment in serializer.data]
+            # for payment in payment_list:
+            #     user = User.objects.get(id=payment['user'])
+            #     payment['user'] = user.username
+            
             if payment_list:
                 return Response({'data': payment_list}, status=200)
             return Response({'message': 'No payment history found'}, status=200)
         
         except Exception as e:
             return Response({'message': str(e)}, status=500)
+
+
+@method_decorator(login_required, name='dispatch')
+@method_decorator(verify_token, name='dispatch')
+class AdminPaymentHistory(APIView):
+    def get(self, request):
+        try:
+            user_id = request.session.get('_auth_user_id')
+            user = User.objects.get(id=user_id)
+            if not user.is_superuser:
+                return Response({'message': 'User not authorized'}, status=401)
+            payments = Payment.objects.all()
+            serializer = PaymentSerializer(payments, many=True)
+            payment_list = [dict(payment) for payment in serializer.data]
+            if payment_list:
+                return Response({'data': payment_list}, status=200)
+            return Response({'message': 'No payment history found'}, status=200)
         
-        
+        except Exception as e:
+            return Response({'message': str(e)}, status=500)
+ 
+
 class PaymentView(APIView):
     def post(self, request):
         try:

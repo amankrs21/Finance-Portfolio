@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -19,20 +19,35 @@ import Auth from '../../components/Auth';
 export default function Header() {
     const pages = ['Home', 'Blog', 'About Us', 'Contact', 'Login'];
     const { http, isValidToken } = Auth();
-    if (isValidToken(localStorage.getItem('token'))) {
+    const navigate = useNavigate();
+
+    const [isAdmin, setIsAdmin] = useState(false);
+    const [openLogin, setOpenLogin] = useState(false);
+    const [anchorElNav, setAnchorElNav] = useState(null);
+
+    if (localStorage.getItem('token')) {
         pages.pop();
         pages.push('Payment');
         pages.push('Logout');
-    }
-
-    if (!isValidToken(localStorage.getItem('token'))) {
+    } else {
         pages.pop();
         pages.push('Login');
     }
 
-    const navigate = useNavigate();
-    const [anchorElNav, setAnchorElNav] = useState(null);
-    const [openLogin, setOpenLogin] = useState(false);
+    useEffect(() => {
+        const checkAdminStatus = async () => {
+            try {
+                if (isValidToken(localStorage.getItem('token'))) {
+                    const response = await http.get("/auth/verify-admin");
+                    setIsAdmin(response.status === 200);
+                }
+            } catch (error) {
+                setIsAdmin(false);
+            }
+        };
+
+        checkAdminStatus();
+    }, [localStorage.getItem('token')]);
 
     const handleOpenNavMenu = (event) => {
         setAnchorElNav(event.currentTarget);
@@ -55,7 +70,7 @@ export default function Header() {
         } else if (page === 'Contact') {
             navigate("/contact");
         } else if (page === 'Payment') {
-            navigate("/payment")
+            navigate(isAdmin ? "/admin-payment" : "/payment");
         } else if (page === 'Logout') {
             try {
                 await http
