@@ -30,7 +30,7 @@ function Copyright() {
 
 export default function Footer() {
     return (
-        <div style={{ background: 'rgba(25, 30, 41, 0.8)', width: "100%", overflowX: "hidden", color: 'white' }}>
+        <div style={{ background: 'rgba(0,0,0, 0.8)', width: "100%", overflowX: "hidden", color: 'white' }}>
             <Container
                 sx={{
                     display: 'flex',

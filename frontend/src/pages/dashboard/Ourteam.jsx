@@ -27,7 +27,7 @@ export default function Ourteam() {
 
     return (
         <>
-            <h1>Our Team</h1>
+            <h1 className="responsive-heading">Our Team</h1>
             <div style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-around' }}>
                 {imagesData.map((image) => (
                     <div key={image.id} style={{ textAlign: 'center', margin: '20px' }}>

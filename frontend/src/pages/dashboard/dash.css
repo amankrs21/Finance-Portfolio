@@ -1,0 +1,392 @@
+/* Common */
+*,
+h1,
+h2,
+h3,
+h4,
+h5,
+a,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --primary: #b79272;
+  --black: #000000;
+  --white: #ffffff;
+  --color-1: #333333;
+  --color-2: #cccccc;
+  --color-3: #2e4413;
+  --color-4: #1c1c1c;
+  --color-5: #efebe7;
+  --color-6: #e3d6c8;
+}
+
+html,
+body {
+  overflow-x: hidden !important;
+}
+
+body {
+  background-color: var(--white);
+  font-family: "Poppins", sans-serif;
+}
+
+::selection {
+  background-color: var(--color-1);
+  color: var(--color-2);
+}
+
+.container {
+  max-width: 1280px;
+  margin: auto;
+}
+
+a,
+button,
+img {
+  transition: all 0.5s;
+}
+
+.white-bg {
+  background-color: var(--white);
+}
+
+.black-bg {
+  background-color: var(--black);
+}
+
+h2.title {
+  font-size: 6vw;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.06);
+  text-transform: uppercase;
+  position: absolute;
+  top: -5vh;
+  left: 0;
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+}
+
+p {
+  margin: 0 0 2vh;
+  font-weight: 400;
+  font-size: 1.5vw;
+  line-height: 2.5vw;
+  color: var(--color-1);
+}
+
+.paragraph p:first-child:first-letter {
+  font-weight: 500;
+  font-size: 2vw;
+  line-height: 3vw;
+}
+
+.common-btn {
+  margin: 0;
+  padding: 1vh 2vw;
+  font-weight: 400;
+  font-size: 1.2vw;
+  line-height: 2vw;
+  color: var(--white);
+  background-color: var(--primary);
+  text-transform: uppercase;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5vw;
+  position: relative;
+  z-index: 1;
+  transition: all 0.15s;
+  user-select: none;
+}
+
+.common-btn::before {
+  left: 0.5vw;
+  top: 0.5vw;
+  position: absolute;
+  content: "";
+  border: 0.2vw solid var(--primary);
+  height: 100%;
+  width: 100%;
+  transition: all 0.15s;
+  z-index: -1;
+}
+
+.common-btn:hover::before {
+  top: 0;
+  left: 0;
+}
+
+.common-btn:hover,
+.common-btn:focus {
+  color: var(--white);
+}
+
+.common-btn:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.common-btn img {
+  width: 2vw;
+}
+
+/* Dark theme */
+.theme-dark h2.title {
+  color: rgb(255 255 255 / 8%);
+}
+
+.theme-dark p {
+  color: var(--color-2);
+}
+
+.banner {
+  background-color: var(--black);
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.banner-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.banner-img::before {
+  position: absolute;
+  content: "";
+  background-color: rgb(0 0 0 / 60%);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+.banner-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.banner-box {
+  padding: 5vh;
+  position: relative;
+  z-index: 1;
+}
+
+.banner-box h1 {
+  position: absolute;
+  top: 11%;
+  left: 0;
+  font-size: 10vw;
+  line-height: 10.7vw;
+  font-weight: 400;
+  text-transform: uppercase;
+  background-image: url(https://www.yudiz.com/codepen/interior-design/mask-img.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  opacity: 0.6;
+  color: var(--white);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-family: "Righteous", cursive;
+  z-index: -1;
+}
+
+.banner-text {
+  margin: 10vh 0 0;
+  padding: 10vh 0 0 5vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  max-width: 80%;
+  overflow: hidden;
+}
+
+.banner-text h2 {
+  margin: 0 0 1vh;
+  font-size: 3vw;
+  line-height: 3.3vw;
+  font-weight: 400;
+  font-style: normal;
+  color: var(--white);
+  position: relative;
+  user-select: none;
+}
+
+.banner-text h3 {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1vw;
+  line-height: 1.5vw;
+  color: rgb(255 255 255 / 72%);
+  position: relative;
+}
+
+/* Company */
+.company-section {
+  padding: 15vh 0 0;
+}
+
+.compy-box {
+  padding: 0;
+}
+
+.compy-box::before {
+  left: 2.5vw;
+  top: -2.5vw;
+  position: absolute;
+  content: "";
+  border: 0.2vw solid var(--primary);
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+
+.compy-box img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Designer */
+.designer-section {
+  padding: 15vh 0 0;
+}
+
+.designer-box {
+  width: 100%;
+  height: 30vw;
+  z-index: 1;
+}
+
+.box-border {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  border: 0.2vw solid var(--white);
+  height: 88%;
+  width: 90%;
+  z-index: -1;
+}
+
+.designer-box .team-member {
+  aspect-ratio: 1 / 1;
+  width: 15vw;
+  position: absolute;
+}
+
+.designer-box .team-member img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.designer-box .team1 {
+  top: -7vw;
+  left: 2vw;
+  z-index: 2;
+}
+
+.designer-box .team2 {
+  top: 5vw;
+  right: 3vw;
+}
+
+.designer-box .team3 {
+  bottom: 0;
+  left: 4vw;
+  z-index: 2;
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 768px) {
+  h2.title {
+    font-size: 8vw;
+    line-height: 1.2;
+    top: -8vh;
+  }
+  
+  p {
+    font-size: 3vw;
+    line-height: 5vw;
+  }
+
+  .common-btn {
+    padding: 2vh 4vw;
+    font-size: 3vw;
+    line-height: 5vw;
+  }
+
+  .common-btn::before {
+    left: 2vw;
+    top: 2vw;
+  }
+
+  .banner-box h1 {
+    font-size: 16vw;
+    line-height: 17vw;
+  }
+
+  .banner-text {
+    margin-top: 10vh;
+    padding: 10vh 0 0 10vw;
+  }
+
+  .banner-text h2 {
+    font-size: 6vw;
+    line-height: 6.5vw;
+  }
+
+  .banner-text h3 {
+    font-size: 2vw;
+    line-height: 3vw;
+  }
+
+  .company-section,
+  .designer-section {
+    padding-top: 10vh;
+  }
+
+  .compy-box::before {
+    left: 5vw;
+    top: -5vw;
+  }
+
+  .designer-box {
+    height: 40vw;
+  }
+
+  .designer-box .team-member {
+    width: 20vw;
+  }
+
+  .designer-box .team1 {
+    top: -14vw;
+    left: 4vw;
+  }
+
+  .designer-box .team2 {
+    top: 8vw;
+    right: 6vw;
+  }
+
+  .designer-box .team3 {
+    bottom: 0;
+    left: 8vw;
+  }
+}

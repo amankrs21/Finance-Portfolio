@@ -3,10 +3,19 @@ import { Container, Typography, Button } from '@mui/material';
 import Layout from '../Layout';
 import Ourteam from './Ourteam';
 import Investors from './Investors';
+import Stocks from './Stocks'
 import backgroundImage from '/h.jpg'
 
 
+
+
 export default function Dashboard() {
+    const handleClick1 = () => {
+        window.location.href = "/login";
+    };
+    const handleClick2 = () => {
+        window.location.href = "/about";
+    };
     return (
         <Layout>
             <Container
@@ -18,7 +27,7 @@ export default function Dashboard() {
                     flexDirection: 'column',
                     alignItems: 'left',
                     justifyContent: 'center',
-                    minHeight: '80vh',
+                    minHeight: '100vh',
                     backgroundImage: `url(${backgroundImage})`, // Use the imported image
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
@@ -34,11 +43,11 @@ export default function Dashboard() {
                     color: '#FFFFFF',
                 }}
             >
-                <Typography variant="h2" sx={{ fontWeight: 700, mb: 2 }}>
-                    Finance Advisory
+                <Typography variant="h2" sx={{ fontWeight: 700 }}>
+                    FINANCE ADVISORY
                 </Typography>
-                <Typography variant="body1" sx={{ fontWeight: 500, mb: 4 }}>
-
+                <Typography variant="body1" sx={{ fontWeight: 700, mb: 4, fontSize: 20 }}>
+                    Seed Wealth, Reap Success.
                 </Typography>
                 <div
                     sx={{
@@ -65,6 +74,7 @@ export default function Dashboard() {
                             fontSize: '1.2rem', // Increase button size
                             flex: 1, // Make buttons flexible
                         }}
+                        onClick={handleClick1}
                     >
                         Get Started
                     </Button>
@@ -83,12 +93,14 @@ export default function Dashboard() {
                             fontSize: '1.2rem', // Increase button size
                             flex: 1, // Make buttons flexible
                         }}
+                        onClick={handleClick2}
                     >
                         Know More
                     </Button>
                 </div>
             </Container>
             <Investors />
+            <Stocks></Stocks>
             <Ourteam />
         </Layout>
 

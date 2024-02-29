@@ -21,7 +21,7 @@ http.interceptors.response.use(
         return response;
     },
     (error) => {
-        if (error.response.status === 401) {
+        if (error.response.status === 401 || error.response.status === 403 || error.response.status === 404) {
             console.log("Unauthorized");
             localStorage.removeItem("token");
             window.location = "/";
@@ -40,6 +40,9 @@ export default function Auth() {
         if (savedToken && isValidToken(savedToken)) {
             setToken(savedToken);
             http.defaults.headers.common.Authorization = `Bearer ${savedToken}`;
+        }
+        else {
+            localStorage.removeItem("token");
         }
     }, []);
 

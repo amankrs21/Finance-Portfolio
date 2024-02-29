@@ -1,0 +1,23 @@
+.responsive-heading {
+    font-size: 5vw;
+    font-weight: bold;
+    text-align: center;
+    text-transform: uppercase;
+    color: #979797; /* Grey color */
+    overflow: hidden; /* Hide overflow text */
+    white-space: nowrap; /* Prevent text from wrapping */
+    /* margin: 1px; */
+  }
+  
+  @media (max-width: 768px) {
+    .responsive-heading {
+      font-size: 8vw; /* Decrease font size for smaller screens */
+    }
+  }
+  .main{
+    margin: 0px;
+    background-color: #191E29;
+  }
+  
+  
+  
