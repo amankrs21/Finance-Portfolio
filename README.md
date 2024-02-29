@@ -53,7 +53,7 @@ This project is a web application developed using React for the frontend and Dja
    pip install -r requirements.txt
    ```
    ```bash
-   python manage.py make migrations
+   python manage.py makemigrations
    ```
    ```bash
    python manage.py migrate
@@ -97,7 +97,9 @@ This project is a web application developed using React for the frontend and Dja
 
 ## Screenshots
 
-![Login Page]('/screenshots/login.png')
+![Alt text](relative%20path/to/img.jpg?raw=true "Title")
+
+![Login Page]('screenshots/login.png')
 
 ![Home Page]('/screenshots/home.png')
 
