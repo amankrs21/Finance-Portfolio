@@ -22,7 +22,7 @@ This project is a web application developed using React for the frontend and Dja
 ## Installation
 
 1. Clone the repository:
-
+   Ignore for now, it's not on github yet
    ```bash
    git clone https://github.com/amankrs21/FinanceReactDjango.git
    ```
@@ -33,7 +33,7 @@ This project is a web application developed using React for the frontend and Dja
    cd FinanceReactDjango
    ```
 
-3. Navigate to backend directory and create a virtual environment:
+3. Backend Setup:
 
    ```bash
    cd backend
@@ -49,24 +49,37 @@ This project is a web application developed using React for the frontend and Dja
    ```bash
    ven\Scripts\activate
    ```
-
-3. Install the required dependencies:
-
    ```bash
    pip install -r requirements.txt
    ```
    ```bash
-   npm install
+   python manage.py make migrations
    ```
-
-4. Run the development server:
-
+   ```bash
+   python manage.py migrate
+   ```
+   ```bash
+   python manage.py createsuperuser
+   ```
    ```bash
    python manage.py runserver
    ```
+   Django server will start at http://localhost:8000/
+
+4. Frontend Setup:
+
+   Open a new terminal and navigate to the project directory:
    ```bash
-   npm start
+   cd frontend
    ```
+   ```bash
+   npm install
+   ```
+   ```bash
+   npm run dev
+   ```
+   React server will start at http://localhost:5173/
+
 5. Open the application in your web browser:
 
    ```bash
@@ -79,3 +92,13 @@ This project is a web application developed using React for the frontend and Dja
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE]
+
+
+## Note
+Note: This is a project created for educational purposes and is not intended for commercial use.
+
+
+## Error Handling
+- Make sure your frontend should work on port 5173 and backend on 8000, otherwise you need to make changes in backend settings.py and need to provide the new frontend url in CORS_ORIGIN_WHITELIST. If you are using different port for backend then you need to change the Auth.js baseURL in frontend.
+- If you are using different database then you need to change the database settings in settings.py of backend.
+- If you encounter any issues while running the application, please feel free to open an issue on this repository. We will be happy to help you troubleshoot the problem.
