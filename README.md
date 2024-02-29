@@ -99,7 +99,7 @@ This project is a web application developed using React for the frontend and Dja
 
 ![Alt text](relative%20path/to/img.jpg?raw=true "Title")
 
-![Login Page]('screenshots/login.png')
+![Login Page](screenshots/login.png)
 
 ![Home Page]('/screenshots/home.png')
 
