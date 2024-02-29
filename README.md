@@ -33,6 +33,23 @@ This project is a web application developed using React for the frontend and Dja
    cd FinanceReactDjango
    ```
 
+3. Navigate to backend directory and create a virtual environment:
+
+   ```bash
+   cd backend
+   ```
+   ```bash
+   python -m venv venv
+   ```
+   Linux or MacOS
+   ```bash
+   source venv/bin/activate
+   ```
+   Windows
+   ```bash
+   ven\Scripts\activate
+   ```
+
 3. Install the required dependencies:
 
    ```bash
