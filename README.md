@@ -86,8 +86,32 @@ This project is a web application developed using React for the frontend and Dja
    http://localhost:5173/
    ```
    ```bash
-   http://localhost:8000/
+   http://localhost:8000/admin/
    ```
+
+## Error Handling
+- Make sure your frontend should work on port 5173 and backend on 8000, otherwise you need to make changes in backend settings.py and need to provide the new frontend url in CORS_ORIGIN_WHITELIST. If you are using different port for backend then you need to change the Auth.js baseURL in frontend.
+- If you are using different database then you need to change the database settings in settings.py of backend.
+- If you encounter any issues while running the application, please feel free to open an issue on this repository. We will be happy to help you troubleshoot the problem.
+
+
+## Screenshots
+
+![Login Page]('/screenshots/login.png')
+
+![Home Page]('/screenshots/home.png')
+
+![About Page]('/screenshots/about.png')
+
+![Payment Page]('/screenshots/payment.png')
+
+![Djnago Admin Page]('/screenshots/admin.png')
+
+
+## Authors
+- Priya Bhardwaj
+- Aman Singh
+
 
 ## License
 
@@ -98,7 +122,5 @@ This project is licensed under the MIT License. See the [LICENSE]
 Note: This is a project created for educational purposes and is not intended for commercial use.
 
 
-## Error Handling
-- Make sure your frontend should work on port 5173 and backend on 8000, otherwise you need to make changes in backend settings.py and need to provide the new frontend url in CORS_ORIGIN_WHITELIST. If you are using different port for backend then you need to change the Auth.js baseURL in frontend.
-- If you are using different database then you need to change the database settings in settings.py of backend.
-- If you encounter any issues while running the application, please feel free to open an issue on this repository. We will be happy to help you troubleshoot the problem.
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
