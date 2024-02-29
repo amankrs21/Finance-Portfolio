@@ -114,8 +114,8 @@ Django Admin Page
 
 
 ## Authors
-- Priya Bhardwaj (@priyaa-bhardwaj)
-- Aman Singh (@amankrs21)
+- Priya Bhardwaj [@priyaa-bhardwaj] (https://www.github.com/priyaa-bhardwaj)
+- Aman Singh [@amankrs21] (https://www.github.com/amankrs21)
 
 
 ## License
