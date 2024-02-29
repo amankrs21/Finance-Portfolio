@@ -1,7 +1,7 @@
 venv
 backend/__pycache__
 payment/__pycache__
-payment/migrations
 users/__pycache__
-users/migrations
+payment/migrations/__pycache__
+users/migrations/__pycache__
 db.sqlite3
