@@ -97,17 +97,20 @@ This project is a web application developed using React for the frontend and Dja
 
 ## Screenshots
 
-![Alt text](relative%20path/to/img.jpg?raw=true "Title")
-
+Login Page
 ![Login Page](screenshots/login.png)
 
-![Home Page]('/screenshots/home.png')
+Home Page
+![Home Page](screenshots/home.png)
 
-![About Page]('/screenshots/about.png')
+About Page
+![About Page](screenshots/about.png)
 
-![Payment Page]('/screenshots/payment.png')
+Payment Page
+![Payment Page](screenshots/payment.png)
 
-![Djnago Admin Page]('/screenshots/admin.png')
+Django Admin Page
+![Djnago Admin Page](screenshots/admin.png)
 
 
 ## Authors
