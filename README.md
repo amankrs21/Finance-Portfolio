@@ -120,7 +120,7 @@ Django Admin Page
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE]
+This project is private and not licensed.
 
 
 ## Note
