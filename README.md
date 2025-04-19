@@ -1,6 +1,8 @@
-# Finance Web Application
+# 💰 Finance-Portfolio
 
 This project is a web application developed using React for the frontend and Django for the backend. It provides features such as user authentication, blog management, about, contact, and portfolio pages with interactive graphs.
+
+> Please not that this project developed by Priya Bhardwaj - [@priyaa-bhardwaj](https://www.github.com/priyaa-bhardwaj) and Aman Singh - [@amankrs21](https://www.github.com/amankrs21) contributed in the backend part.
 
 ## Features
 
